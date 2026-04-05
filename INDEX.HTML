@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Aarjoo Dahiya | IT Portfolio</title>
+  <!-- Google Fonts & simple CSS reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* header / hero */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      border-radius: 2rem;
+      padding: 2rem 2rem 2rem 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero .tagline {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      margin-bottom: 1rem;
+      border-left: 3px solid #38bdf8;
+      padding-left: 1rem;
+    }
+
+    .hero .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin: 1.2rem 0 0.5rem;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(4px);
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* section styling */
+    .section {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.6rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      transition: all 0.2s;
+      border: 1px solid #e2e8f0;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      border-left: 5px solid #3b82f6;
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+      color: #0f172a;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 1.2rem;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid #eef2ff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+      transition: transform 0.1s ease;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #1e293b;
+    }
+
+    .project-links {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #f1f5f9;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: #1e293b;
+      transition: 0.2s;
+      border: 1px solid #e2e8f0;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+      border: none;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline:hover {
+      background: #eef2ff;
+      border-color: #cbd5e1;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      background: #eef2ff;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin: 0.2rem 0.25rem;
+      color: #1e40af;
+    }
+
+    .work-item, .edu-item {
+      margin-bottom: 1.2rem;
+      border-bottom: 1px dashed #e2e8f0;
+      padding-bottom: 0.8rem;
+    }
+
+    .work-item strong, .edu-item strong {
+      font-size: 1rem;
+      color: #0f172a;
+    }
+
+    .date {
+      font-size: 0.75rem;
+      color: #475569;
+      background: #f1f5f9;
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      margin-left: 0.6rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      color: #475569;
+      font-size: 0.8rem;
+      border-top: 1px solid #e2e8f0;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        padding: 1rem;
+      }
+      .hero {
+        padding: 1.5rem;
+      }
+      .section {
+        padding: 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- Hero Section with Bio & contact vibe -->
+  <div class="hero">
+    <h1>Aarjoo Dahiya</h1>
+    <div class="tagline">B.Tech IT · SGSITS Indore · Full Stack Enthusiast & AI Explorer</div>
+    <div class="badge-group">
+      <span class="badge">📱 Mobile Dev (Flutter/Dart)</span>
+      <span class="badge">📊 Data Analytics · Power BI</span>
+      <span class="badge">☁️ Cloud & ML Integration</span>
+      <span class="badge">🏅 National Level Boxer</span>
+    </div>
+    <div style="margin-top: 1rem;">
+      <a href="#projects" style="color:white; background:#3b82f6; padding:0.4rem 1.2rem; border-radius:30px; text-decoration:none; font-weight:500;">⬇ Explore My Work</a>
+    </div>
+  </div>
+
+  <!-- Scholastic & Achievements + Work Exp combined layout -->
+  <div class="grid-2" style="margin-bottom: 2rem;">
+    <!-- left: Education & Achievements -->
+    <div class="section" style="margin-bottom:0;">
+      <div class="section-title" style="margin-bottom:1rem;">📖 Education & Honors</div>
+      <div class="edu-item"><strong>B.Tech Information Technology</strong> <span class="date">2022–2026</span><br>SGSITS, Indore | CGPA: 7.5+ (pursuing)</div>
+      <div class="edu-item"><strong>10th (MP Board)</strong> <span class="date">2020</span><br>Govt. Excellence School | 96% · CM Medhavi Scholar ₹25,000</div>
+      <div style="margin-top: 1rem;"><span class="skill-tag">🏆 NPTEL STAR Achiever</span> <span class="skill-tag">🎯 Winner SkiDev Case Combat</span> <span class="skill-tag">🥇 Taekwondo Gold - IIT Kanpur</span></div>
+      <div style="margin-top: 0.8rem;"><strong>🏅 Scholastic Highlights:</strong> CM Medhavi Vidhyarthi Yojna (May'22) · NPTEL STAR Dec'25 · SkiDev Case Combat Winner (June'25)</div>
+    </div>
+
+    <!-- right: Work Experience -->
+    <div class="section" style="margin-bottom:0;">
+      <div class="section-title" style="margin-bottom:1rem;">💼 Work Experience</div>
+      <div class="work-item"><strong>Mobile App Development Intern</strong> <span class="date">June 2025 – July 2025</span><br>@ AaKAS NGO — Flutter frontend, interactive UI screens, form integration & backend collaboration.</div>
+      <div class="work-item"><strong>Data & UI Lead (Project)</strong> <span class="date">June 2025</span><br>SkiDev Case Combat: Built GroVQuick UI (Figma) + Python analytics (Google Colab) + Power BI dashboards for delivery KPIs.</div>
+      <div><strong>Sports Representative</strong> <span class="date">Sep'25</span><br>IT Dept, EKSM (Eklavya Khel Spardha Manch) · Volunteer Lit Women's Chowk</div>
+    </div>
+  </div>
+
+  <!-- TECHNICAL PROJECTS (with live links) -->
+  <div class="section" id="projects">
+    <div class="section-title">🚀 Featured Technical Projects</div>
+    <div class="grid-2">
+      <!-- Karuna Darpan -->
+      <div class="card">
+        <h3>💙 Karuna Darpan</h3>
+        <div><span class="skill-tag">Dart</span> <span class="skill-tag">Flutter</span> <span class="skill-tag">MongoDB</span> <span class="skill-tag">REST APIs</span></div>
+        <p style="margin-top: 0.6rem;">Native mobile app providing real-time social welfare & community support information. Backend integration with MongoDB & REST APIs for live updates and seamless user interaction.</p>
+      </div>
+      <!-- GrovQuick Hyperlocal -->
+      <div class="card">
+        <h3>🛒 GrovQuick - Hyperlocal Grocery Startup</h3>
+        <div><span class="skill-tag">Power BI</span> <span class="skill-tag">Google Colab (Python)</span> <span class="skill-tag">Figma</span></div>
+        <p style="margin-top: 0.6rem;">Led end-to-end data analytics: delivery trends, customer satisfaction dashboards, interactive Power BI KPIs, and mobile UI wireframing. Won SkiDev Case Combat for this strategy.</p>
+      </div>
+      <!-- Campus Event Management -->
+      <div class="card">
+        <h3>🎓 Campus Event Management System</h3>
+        <div><span class="skill-tag">HTML5/CSS</span> <span class="skill-tag">JavaScript</span> <span class="skill-tag">LocalStorage</span></div>
+        <p>Web platform for college event creation, user registration & admin management. Built with clean frontend and persistent data handling.</p>
+      </div>
+      <!-- Live AI/ML Projects (showcasing the 2 live websites) -->
+      <div class="card" style="background: linear-gradient(105deg, #fefce8 0%, #ffffff 100%); border-left: 4px solid #3b82f6;">
+        <h3>🤖 LIVE AI APPLICATIONS</h3>
+        <p style="font-weight:500;">Two production-grade demos deployed on HuggingFace & Render:</p>
+        <div class="project-links" style="margin-top: 0.9rem;">
+          <a href="https://huggingface.co/spaces/aarzoodahiya81/eye-disease-detection" target="_blank" class="btn btn-primary">👁️ Eye Disease Detection</a>
+          <a href="http://whatsapp-sentiment-analyzer.onrender.com" target="_blank" class="btn btn-primary">💬 WhatsApp Sentiment Analyzer</a>
+        </div>
+        <p style="margin-top: 0.8rem; font-size:0.85rem;">🔍 <strong>Eye Disease Detection</strong> – deep learning model to classify ocular diseases.<br>
+        📊 <strong>WhatsApp Sentiment Analyzer</strong> – real-time sentiment analysis on chat exports (NLP + dashboard).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Platforms, Skills & Courses Undertaken -->
+  <div class="grid-2">
+    <div class="section">
+      <div class="section-title">⚙️ Tech Stack & Tools</div>
+      <div>
+        <strong>Programming:</strong> Python, Java, C, Dart<br>
+        <strong>Frontend & Design:</strong> HTML5, CSS3, JavaScript, Figma (UI/UX, wireframing)<br>
+        <strong>Data & Analytics:</strong> Power BI, Google Colab, Pandas/Matplotlib<br>
+        <strong>Databases & Cloud:</strong> MongoDB, REST APIs, LocalStorage, cloud deployment (HuggingFace, Render)<br>
+        <strong>Dev & OS:</strong> Windows, Linux, Visual Studio, Android Studio<br>
+      </div>
+      <div style="margin-top: 1rem;">
+        <span class="skill-tag">Python</span> <span class="skill-tag">Flutter</span> <span class="skill-tag">Power BI</span> <span class="skill-tag">MongoDB</span> <span class="skill-tag">Figma</span> <span class="skill-tag">REST APIs</span> <span class="skill-tag">Git</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">📚 Core Courses</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+        <span class="skill-tag">Data Structures & Algorithms</span>
+        <span class="skill-tag">Object Oriented Programming</span>
+        <span class="skill-tag">Operating Systems</span>
+        <span class="skill-tag">Computer Networks</span>
+        <span class="skill-tag">Database Management System</span>
+        <span class="skill-tag">Machine Learning*</span>
+      </div>
+      <div style="margin-top: 1.2rem;">
+        <strong>🏅 Extracurricular Glory:</strong> <br>
+        🥇 Gold Medalist - Taekwondo at UDGHOSH (IIT Kanpur) Oct'25 <br>
+        🥊 National Level Boxing Player · Participant SkiDev Case Combat <br>
+        📍 Volunteer - Lit Women's Chowk (March'24) · Sports Representative IT Dept.
+      </div>
+    </div>
+  </div>
+
+  <!-- Live Projects preview section: extra emphasis on two live websites -->
+  <div class="section" style="background: #f1f5fe;">
+    <div class="section-title">🌐 Live Deployed Projects (Accessible 24/7)</div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; align-items: flex-start;">
+      <div style="flex:1; min-width: 200px;">
+        <h3 style="display: flex; gap: 0.5rem;">👁️ Eye Disease Detection <span style="font-size: 0.7rem; background:#22c55e20; padding: 0 8px; border-radius: 40px;">Hugging Face Spaces</span></h3>
+        <p>Deep learning based classifier to detect multiple eye diseases from medical images. Built with Gradio and PyTorch.</p>
+        <a href="https://huggingface.co/spaces/aarzoodahiya81/eye-disease-detection" target="_blank" class="btn btn-outline" style="background:#ffffff;">🔗 Launch App →</a>
+      </div>
+      <div style="flex:1; min-width: 200px;">
+        <h3>💬 WhatsApp Sentiment Analyzer <span style="font-size: 0.7rem; background:#22c55e20; padding: 0 8px; border-radius: 40px;">Render Cloud</span></h3>
+        <p>Upload WhatsApp chat export, get sentiment trends, emotion distribution and interactive visualizations. NLP + Flask dashboard.</p>
+        <a href="http://whatsapp-sentiment-analyzer.onrender.com" target="_blank" class="btn btn-outline" style="background:#ffffff;">📊 Open Analyzer →</a>
+      </div>
+      <div style="flex:0 0 auto;">
+        <div class="badge" style="background:#e2e8f0; color:#0f172a;">✅ Fully containerized demo | API integrated</div>
+      </div>
+    </div>
+    <hr style="margin: 1rem 0; border-color: #cbd5e180;">
+    <p style="font-size: 0.85rem; color:#334155;">⭐ Both projects showcase real-world deployment using cloud platforms (HuggingFace Spaces / Render) — demonstrating public deployment models, container-ready apps and AI integration.</p>
+  </div>
+
+  <!-- Positions of Responsibility + extra -->
+  <div class="grid-2">
+    <div class="section">
+      <div class="section-title">🏅 Positions of Responsibility</div>
+      <ul style="margin-left: 1.2rem; list-style-type: circle;">
+        <li><strong>Sports Representative (SR)</strong> – IT Department, Eklavya Khel Spardha Manch (EKSM) | Sep'25</li>
+        <li><strong>Team Lead</strong> – SkiDev Case Combat (Winning team) | June'25</li>
+        <li><strong>Volunteer</strong> – Lit Women's Chowk | March'24</li>
+      </ul>
+    </div>
+    <div class="section">
+      <div class="section-title">📜 Certifications & Achievements</div>
+      <ul style="margin-left: 1.2rem;">
+        <li>🏅 NPTEL STAR Achiever - Swayam NPTEL (Dec'25)</li>
+        <li>💰 CM Medhavi Vidhyarthi Yojna Scholarship ₹25,000</li>
+        <li>🥇 Gold Medalist - Taekwondo @ UDGHOSH, IIT Kanpur (Oct'25)</li>
+        <li>📊 Winner SkiDev Case Combat: Data + UI design (June'25)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- footer with email / contact mimic -->
+  <div class="footer">
+    📍 Aarjoo Dahiya · B.Tech IT, SGSITS Indore ·  
+    <a href="#" style="color:#2563eb; text-decoration: none;">📧 aarjoodahiya81@gmail.com</a> (portfolio contact)<br>
+    
+  </div>
+</div>
+</body>
+</html>
